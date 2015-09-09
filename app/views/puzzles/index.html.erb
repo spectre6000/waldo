@@ -1,0 +1,4 @@
+<% @puzzles.each do |puzzle| %>
+  <%= puzzle.name %><br>
+  <%= link_to (image_tag puzzle.thumb, width: 300 ), puzzle %><br>
+<%end%>

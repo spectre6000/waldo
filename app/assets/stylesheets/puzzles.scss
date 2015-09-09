@@ -1,0 +1,52 @@
+// Main puzzle image
+
+.waldoImage {
+  margin: 0;
+  padding: 0;
+  &.fitted {
+    width: auto; 
+    height: auto; 
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+//Sidebar
+.sidebar {
+  position: fixed;
+  top: 100px;
+  left: -120px;
+  width: 120px;
+  height: 440px;
+  background-color: #DDD;
+  border-radius: 0 5px 5px 0;
+  button {
+    height: 30px;
+    width: 110px;
+    float: left;
+    display: inline-block;
+    border-radius: 5px;
+    border-color: #fff;
+    padding: 0;
+    background-color: #fff;
+    margin: 5px;
+    p {
+      display: inline-block;
+      float: left;
+      margin: 5px;
+    }
+    .face_button {
+      height: auto;
+      height: 25px;
+      float: right;
+      max-width: 30px;
+      margin: 1px 3px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &.show_sidebar {
+    left: 0;
+  }  
+}
