@@ -1,5 +1,5 @@
 class AddIdtoPuzzles < ActiveRecord::Migration
   def change
-        add_column :puzzles, :cssid, :text
+    add_column :puzzles, :cssid, :string
   end
 end

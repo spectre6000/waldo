@@ -10,7 +10,18 @@ class PuzzlesController < ApplicationController
   end
 
   def verify_character
-
+    @puzzle = Puzzle.find_by(cssid: params[:id])
+    @character = Character.find_by(name: params[:character], puzzles_id: @puzzle.id)
+    targetX = params[:x].to_f
+    targetY = params[:y].to_f
+    if  targetX < @character.x_coordinate + (@character.x_tolerance)/2 && 
+        targetX > @character.x_coordinate - @character.x_tolerance/2 &&
+        targetY < @character.y_coordinate + (@character.y_tolerance)/2 && 
+        targetY > @character.y_coordinate - @character.y_tolerance/2
+      render :json => true
+    else
+      render :json => false
+    end
   end
 
 end

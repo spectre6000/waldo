@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910161434) do
+ActiveRecord::Schema.define(version: 20150910190030) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
-    t.decimal  "x_coordinate", precision: 4
-    t.decimal  "y_coordinate", precision: 4
+    t.float    "x_coordinate"
+    t.float    "y_coordinate"
     t.integer  "puzzles_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.decimal  "x_tolerance",  precision: 2
-    t.decimal  "y_tolerance",  precision: 2
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.float    "x_tolerance"
+    t.float    "y_tolerance"
   end
 
   add_index "characters", ["puzzles_id"], name: "index_characters_on_puzzles_id"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20150910161434) do
     t.integer  "height"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text     "thumb"
-    t.text     "cssid"
+    t.string   "thumb"
+    t.string   "cssid"
   end
 
 end

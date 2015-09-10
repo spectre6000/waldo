@@ -108,20 +108,26 @@ var wheresWaldo = (function() {
         $('button').on('click', function(){
           var character = $(this).attr('data-char');
           verifyCharacter(lastX, lastY, character);
+          //***********************probably needs to move to the end of the ajax call*****************************
           selector();
         })
       }
 
       //AJAX call to database to verify character presence
         var verifyCharacter = function(lastX, lastY, character) {
-          // $.ajax({
-          //     url: ,
-          //     type: "GET",
-          //     dataType: ,
-          //     success: function(result) {
-          //       //pass off to function to check against tolerances and change colors/timing as necessary
-          //     }
-          //   });
+          $.ajax({
+              url: '/verify_character',
+              type: "GET",
+              data: {id: $('.waldoImage').attr('id'), character: character, x: lastX, y: lastY},
+              dataType: "json",
+              success: function(result) {
+                console.log(result);
+              },
+              error: function(result) {
+                console.log(result);
+              }
+            });
+          
         }
 
   //Revealing Module design pattern reveal
