@@ -1,5 +1,8 @@
 var wheresWaldo = (function() {
 
+  //DOM declaration
+    // $puzzle = document.getElementById('.waldoImage');
+
   //House vars
     var DELAY = 275;
     var clicks = 0;
@@ -11,12 +14,14 @@ var wheresWaldo = (function() {
   //Setup
     var initialize = function(){
       clicked();
+      characterSelect();
     }
 
     //Click handler
       var clicked = function(){
         
-        $('img').on('click', function(e){
+        
+        $('.waldoImage').on('click', function(e){
           //count clicks
           clicks++;
 
@@ -51,7 +56,7 @@ var wheresWaldo = (function() {
 
       //Resize image
         var zoom = function(e){
-          $("img").toggleClass("fitted");
+          $('.waldoImage').toggleClass("fitted");
         }
 
       //Reposition image to click position
@@ -85,14 +90,27 @@ var wheresWaldo = (function() {
           var recorder = function(e) {
             if ( $('.waldoImage').hasClass("fitted") ) {
               //Fitted
-              lastX = e.pageX * 2/$("img").attr('width');
-              lastY = e.pageY * 2/$("img").attr('height');
+              lastX = e.pageX * 2/$('.waldoImage').attr('width');
+              lastY = e.pageY * 2/$('.waldoImage').attr('height');
             } else {
               //Not fitted
-              lastX = e.pageX/$("img").attr('width');
-              lastY = e.pageY/$("img").attr('height');
+              lastX = e.pageX/$('.waldoImage').attr('width');
+              lastY = e.pageY/$('.waldoImage').attr('height');
             }
           }
+
+    //Character button handler
+      var characterSelect = function(){
+        $('button').on('click', function(){
+          var character = $(this).attr('data-char');
+          verifyCharacter(lastX, lastY, character);
+        })
+      }
+
+      //AJAX call to database to verify character presence
+        var verifyCharacter = function(lastX, lastY, character) {
+          
+        }
 
   //Revealing Module design pattern reveal
     return {
