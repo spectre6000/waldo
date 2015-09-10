@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910190030) do
+ActiveRecord::Schema.define(version: 20150910153054) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
     t.float    "x_coordinate"
+    t.float    "x_tolerance"
     t.float    "y_coordinate"
+    t.float    "y_tolerance"
     t.integer  "puzzles_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.float    "x_tolerance"
-    t.float    "y_tolerance"
   end
 
   add_index "characters", ["puzzles_id"], name: "index_characters_on_puzzles_id"
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 20150910190030) do
   create_table "puzzles", force: :cascade do |t|
     t.string   "name"
     t.string   "file_name"
+    t.string   "thumb"
+    t.string   "cssid"
     t.integer  "width"
     t.integer  "height"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "thumb"
-    t.string   "cssid"
   end
 
 end

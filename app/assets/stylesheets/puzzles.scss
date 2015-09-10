@@ -44,11 +44,13 @@
     &:hover {
       cursor: pointer;
     }
-    &:found {
+    &.found {
       background-color: #0C0;
+      border-color: #0C0;
     }
-    &:wrong {
+    &.wrong {
       background-color: #E33;
+      border-color: #E33;
     }
   }
 }
