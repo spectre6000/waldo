@@ -46,5 +46,11 @@
     &:hover {
       cursor: pointer;
     }
+    &:found {
+      background-color: #0C0;
+    }
+    &:wrong {
+      background-color: #E33;
+    }
   }
 }

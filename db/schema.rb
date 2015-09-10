@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910153054) do
+ActiveRecord::Schema.define(version: 20150910161434) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20150910153054) do
     t.integer  "puzzles_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.decimal  "x_tolerance",  precision: 2
+    t.decimal  "y_tolerance",  precision: 2
   end
 
   add_index "characters", ["puzzles_id"], name: "index_characters_on_puzzles_id"

@@ -31,7 +31,9 @@ Puzzle.create!(         name:           "Robin Hood's Merry Mess-up",
 Character.create!(      name:           "Waldo",
                         puzzles_id:     1, #Gobbling Gluttons
                         x_coordinate:   0.5701,
+                        x_tolerance:    0.01,
                         y_coordinate:   0.3572,
+                        y_tolerance:    0.04,
                         created_at:     Time.now,
                         updated_at:     Time.now
                         )
