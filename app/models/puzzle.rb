@@ -1,3 +1,3 @@
 class Puzzle < ActiveRecord::Base
-  has_many :characters
+  has_many :characters, :foreign_key => "puzzles_id", :dependent => :destroy
 end

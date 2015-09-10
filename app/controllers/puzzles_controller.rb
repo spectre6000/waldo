@@ -6,6 +6,11 @@ class PuzzlesController < ApplicationController
 
   def show
     @puzzle = Puzzle.find(params[:id])
+    @characters = Character.find_by(puzzles_id: @puzzle.id)
+  end
+
+  def verify_character
+
   end
 
 end
