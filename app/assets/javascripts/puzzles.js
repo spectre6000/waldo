@@ -92,10 +92,12 @@ var wheresWaldo = (function() {
               //Fitted
               lastX = (e.pageX * 2/$('.waldoImage').attr('width')).toFixed(4);
               lastY = (e.pageY * 2/$('.waldoImage').attr('height')).toFixed(4);
+              console.log('X: ' + lastX + ', Y: ' + lastY);
             } else {
               //Not fitted
               lastX = (e.pageX/$('.waldoImage').attr('width')).toFixed(4);
               lastY = (e.pageY/$('.waldoImage').attr('height')).toFixed(4);
+              console.log('X: ' + lastX + ', Y: ' + lastY);
             }
           }
 
