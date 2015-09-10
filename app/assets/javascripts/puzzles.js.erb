@@ -134,9 +134,11 @@ var wheresWaldo = (function() {
           //Blink to show result
           interval = setInterval(function(){blinkFound(character, 'found')}, 200);
           //Stop blinking while solid color
-          setTimeout(makeItStop, 1200)
+          setTimeout(makeItStop, 1200);
+          
           //Romove selector panel after a slight delay
           setTimeout(selector, 1500)
+
         }
 
         //When character is misidentified
@@ -163,7 +165,27 @@ var wheresWaldo = (function() {
           //Stop flashing
             var makeItStop = function(){
               clearInterval(interval);
+              //Check for win
+              setTimeout(checkForWin(), 1201);
             }
+
+      //Winner?
+      var checkForWin = function(){
+        var buttonCounter = 0;
+        $('button').each(function() {
+          if ($( this ).attr("class") !== 'found') {
+            console.log('not all found');
+            return false;
+          } else {
+            console.log('found');
+            buttonCounter++;
+          }
+        });
+        if (buttonCounter === $('button').length) {
+          console.log('prompt');
+          var name = prompt("You did it!");
+        }
+      }
 
   //Revealing Module design pattern reveal
     return {

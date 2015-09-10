@@ -2,6 +2,6 @@
 
 <div class='sidebar'>
   <% @puzzle.characters.each do |character| %>
-    <button data-char='<%=character.name%>'  id="<%=character.name%>"><p><%=character.name%></p><%= image_tag "#{character.name.downcase}_face.png", class: 'face_button'%></button><br>
+    <button data-char='<%=character.name%>' id="<%=character.name%>"><p><%=character.name%></p><%= image_tag "#{character.name.downcase}_face.png", class: 'face_button'%></button><br>
   <%end%>
 </div>
