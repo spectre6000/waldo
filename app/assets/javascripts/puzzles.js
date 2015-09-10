@@ -104,12 +104,13 @@ var wheresWaldo = (function() {
         $('button').on('click', function(){
           var character = $(this).attr('data-char');
           verifyCharacter(lastX, lastY, character);
+          selector();
         })
       }
 
       //AJAX call to database to verify character presence
         var verifyCharacter = function(lastX, lastY, character) {
-          
+
         }
 
   //Revealing Module design pattern reveal
