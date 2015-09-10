@@ -64,12 +64,12 @@ var wheresWaldo = (function() {
           var posY;
           var posX;
           if ( $('.waldoImage').hasClass("fitted") ) {
-            posY = e.pageY * 2;
-            posX = e.pageX * 2;
+            posY = (e.pageY * 2).toFixed(4);
+            posX = (e.pageX * 2).toFixed(4);
             window.scrollTo( posX , posY );
           } else {
-            posY = e.pageY;
-            posX = e.pageX;
+            posY = (e.pageY).toFixed(4);
+            posX = (e.pageX).toFixed(4);
             window.scrollTo( posX , posY );
           }
         }
@@ -90,12 +90,12 @@ var wheresWaldo = (function() {
           var recorder = function(e) {
             if ( $('.waldoImage').hasClass("fitted") ) {
               //Fitted
-              lastX = e.pageX * 2/$('.waldoImage').attr('width');
-              lastY = e.pageY * 2/$('.waldoImage').attr('height');
+              lastX = (e.pageX * 2/$('.waldoImage').attr('width')).toFixed(4);
+              lastY = (e.pageY * 2/$('.waldoImage').attr('height')).toFixed(4);
             } else {
               //Not fitted
-              lastX = e.pageX/$('.waldoImage').attr('width');
-              lastY = e.pageY/$('.waldoImage').attr('height');
+              lastX = (e.pageX/$('.waldoImage').attr('width')).toFixed(4);
+              lastY = (e.pageY/$('.waldoImage').attr('height')).toFixed(4);
             }
           }
 
