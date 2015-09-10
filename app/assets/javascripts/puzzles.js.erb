@@ -1,8 +1,5 @@
 var wheresWaldo = (function() {
 
-  //DOM declaration
-    // $puzzle = document.getElementById('.waldoImage');
-
   //House vars
     var DELAY = 275;
     var clicks = 0;
@@ -10,42 +7,44 @@ var wheresWaldo = (function() {
     var slide = '-120';
     var lastX;
     var lastY;
+    var name;
+    var score;
 
   //Setup
     var initialize = function(){
       clicked();
       characterSelect();
+      startTimer();
     }
 
     //Click handler
       var clicked = function(){
-        
-        
-        $('.waldoImage').on('click', function(e){
-          //count clicks
-          clicks++;
 
-          if(clicks === 1) {
-            timer = setTimeout(function() {
-              //perform single-click action
-              single(e);
-              //after action performed, reset counter
-              clicks = 0;
-            }, DELAY);
-          } else {
-            //prevent single-click action
-            clearTimeout(timer);
-            //perform double-click action
-            double(e);
+        $('.waldoImage').on('click', function(e){
+        //count clicks
+        clicks++;
+        if(clicks === 1) {
+          timer = setTimeout(function() {
+            //perform single-click action
+            single(e);
             //after action performed, reset counter
             clicks = 0;
-          }
+          }, DELAY);
+        } else {
+          //prevent single-click action
+          clearTimeout(timer);
+          //perform double-click action
+          double(e);
+          //after action performed, reset counter
+          clicks = 0;
+        }
         })
 
         .on("dblclick", function(e){
           //cancel system double-click event
           e.preventDefault();
         });
+
       };
 
     //Double click handler
@@ -127,7 +126,7 @@ var wheresWaldo = (function() {
             });
         }
 
-        //When character is successfully located
+      //When character is successfully located
         var found = function(character) {
           //Get rid of picture if correct
           $('#' + character + ' img').remove();
@@ -139,7 +138,7 @@ var wheresWaldo = (function() {
           setTimeout(selector, 1500)
         }
 
-        //When character is misidentified
+      //When character is misidentified
         var failed = function(character) {
           if ($('#' + character).attr('class') !== 'found') {
             //Blink to show result
@@ -178,9 +177,15 @@ var wheresWaldo = (function() {
           }
         });
         if (buttonCounter === $('button').length) {
-          var name = prompt("You did it!");
+          clearInterval(clock)
+          name = prompt('You did it in ' + timer + ' seconds! Enter your name to record your score.');
         }
       }
+
+    //Timer
+    var startTimer = function(){
+      clock = setInterval(function(){timer++}, 1000)
+    }
 
   //Revealing Module design pattern reveal
     return {
