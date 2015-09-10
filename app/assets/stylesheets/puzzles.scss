@@ -16,20 +16,21 @@
   position: fixed;
   top: 100px;
   left: -120px;
-  width: 120px;
+  width: 115px;
   height: 440px;
-  background-color: #DDD;
+  padding: 5px 5px 5px 0;
+  background-color: #E33;
   border-radius: 0 5px 5px 0;
   button {
     height: 30px;
     width: 110px;
     float: left;
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 0 5px 5px 0;
     border-color: #fff;
     padding: 0;
     background-color: #fff;
-    margin: 5px;
+    margin: 5px 0;
     p {
       display: inline-block;
       float: left;
@@ -46,7 +47,4 @@
       cursor: pointer;
     }
   }
-  &.show_sidebar {
-    left: 0;
-  }  
 }
