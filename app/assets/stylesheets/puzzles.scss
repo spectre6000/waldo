@@ -4,6 +4,7 @@
       background-image: url(image_path('background.jpg'));
       background-size: 100% 100%;
       margin: -20px;
+      min-height: 110%;
     }
   //Header
     #root_header{
@@ -28,9 +29,38 @@
     }
   //Puzzle marquee
     #puzzle_marquee {
-      width: 80%;
-      margin: 0 auto 50px auto;
+      font-family: sans-serif;
+      width: 75%;
+      margin: 50px auto ;
+      background-color: #FFF;
+      .puzzle_header {
+        float: left;
+        h2 {
+          margin: 20px;
+        }
+        img {
+          margin: 20px;
+        }
+      }
+      .clear {
+        clear: both;
+      }
+      .scores {
+        width: 60%;
+        float: right;
+        .score_name {
+          float: left;
+          width: 30%;
+          font-weight: bold;
+          text-align: right;
+        }
+        .score_num {
+          float:right;
+          width: 60%;
+        }
+      }
     }
+
 
 //Show page
   // Main puzzle image

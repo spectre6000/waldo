@@ -2,7 +2,7 @@ class PuzzlesController < ApplicationController
   
   def index
     @puzzles = Puzzle.all
-    @users = User.order('score DESC')
+    @users = User.order('score ASC')
   end
 
   def show

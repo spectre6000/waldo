@@ -5,11 +5,14 @@
     <p>Click a puzzle to begin. The timer starts as soon as the puzzle loads. Double click to zoom. Click on characters when you find them, and the character selector will appear for you to indicate who or what you found. Find them all as quickly as you can, and be added to the top scores for each puzzle.</p>
   </div>
 
-  <div id='puzzle_marquee'>
-    <% @puzzles.each do |puzzle| %>
-      <h2><%= puzzle.name %></h2><br>
-      <%= link_to (image_tag puzzle.thumb, width: 300 ), puzzle %><br>
+  <% @puzzles.each do |puzzle| %>
+    <div id='puzzle_marquee'>
+      <div class='puzzle_header'>
+        <h2><%= puzzle.name %></h2>
+        <%= link_to (image_tag puzzle.thumb, width: 300 ), puzzle %><br>
+      </div>
       <div class='scores'>
+        <h3>Best times:</h3>
         <% count = 0 %>
         <% @users.each do |user| %>
           <% count +=1 %>
@@ -17,6 +20,10 @@
           <%= render partial: 'user' , locals: {user: user, puzzles_id: puzzle.id} %>
         <% end %>
       </div>
-    <%end%>
-  </div>
+      <div class='clear'></div>
+    </div>
+  <%end%>
+
+  <br>
+
 </div>

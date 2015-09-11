@@ -1,7 +1,4 @@
-
   <% if user.puzzles_id == puzzles_id %>
-
-    <p><%= user.name %>: <%= user.score %></p>
-    
+    <p class='score_name'><%= user.name %>:</p> <p class= 'score_num'><%= user.score %> seconds</p>
+    <div class='clear'></div>
   <% end %>
-
