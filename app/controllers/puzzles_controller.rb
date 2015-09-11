@@ -24,8 +24,15 @@ class PuzzlesController < ApplicationController
     end
   end
 
-  def record_score
-    # @puzzle = Puzzle.find_by(cssid: params[:id])
+  def user_score
+    puts "something"
+    @puzzle = Puzzle.find_by(cssid: params[:id])
+    name = params[:name].to_s
+    score = params[:time].to_i
+    puzzles_id = @puzzle.id
+    @user = User.new(:name => name, :score => score, :puzzles_id => puzzles_id)
+    @user.save
+    render :json => true
   end
 
 end

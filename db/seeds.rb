@@ -38,22 +38,22 @@ Character.create!(      name:           "Waldo",
                         updated_at:     Time.now
                         )
 
-Character.create!(      name:           "Wizard",
-                        puzzles_id:     1, #Gobbling Gluttons
-                        x_coordinate:   0.8573,
-                        x_tolerance:    0.03,
-                        y_coordinate:   0.8772,
-                        y_tolerance:    0.09,
-                        created_at:     Time.now,
-                        updated_at:     Time.now
-                        )
+# Character.create!(      name:           "Wizard",
+#                         puzzles_id:     1, #Gobbling Gluttons
+#                         x_coordinate:   0.8573,
+#                         x_tolerance:    0.03,
+#                         y_coordinate:   0.8772,
+#                         y_tolerance:    0.09,
+#                         created_at:     Time.now,
+#                         updated_at:     Time.now
+#                         )
 
-Character.create!(      name:           "Key",
-                        puzzles_id:     1, #Gobbling Gluttons
-                        x_coordinate:   0.6646,
-                        x_tolerance:    0.01,
-                        y_coordinate:   0.8633,
-                        y_tolerance:    0.01,
-                        created_at:     Time.now,
-                        updated_at:     Time.now
-                        )
+# Character.create!(      name:           "Key",
+#                         puzzles_id:     1, #Gobbling Gluttons
+#                         x_coordinate:   0.6646,
+#                         x_tolerance:    0.01,
+#                         y_coordinate:   0.8633,
+#                         y_tolerance:    0.01,
+#                         created_at:     Time.now,
+#                         updated_at:     Time.now
+#                         )

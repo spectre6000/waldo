@@ -181,12 +181,29 @@ var wheresWaldo = (function() {
         if (buttonCounter === $('button').length) {
           clearInterval(clock)
           name = prompt('You did it in ' + timer + ' seconds! Enter your name to record your score.');
+          recordScore(name, timer);
         }
       }
 
     //Timer
     var startTimer = function(){
       clock = setInterval(function(){timer++}, 1000)
+    }
+
+    //Record score
+    var recordScore = function(name, time) {
+      $.ajax({
+        url: '/user_score',
+        type: "POST",
+        data: {id: $('.waldoImage').attr('id'), name: name, time: time},
+        dataType: "json",
+        success: function(result) {
+          window.location.href = '<%= Rails.application.routes.url_helpers.root_path %>';
+        },
+        error: function(result) {
+          console.log("Something went awry...");
+        }
+      });
     }
 
   //Revealing Module design pattern reveal
