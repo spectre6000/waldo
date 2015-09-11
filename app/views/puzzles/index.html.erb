@@ -1,4 +1,14 @@
-<% @puzzles.each do |puzzle| %>
-  <%= puzzle.name %><br>
-  <%= link_to (image_tag puzzle.thumb, width: 300 ), puzzle %><br>
-<%end%>
+<div id='main_container'>
+  <div id='root_header'>
+    <h1>Welcome to Waldo World!</h1>
+
+    <p>Click a puzzle to begin. The timer starts as soon as the puzzle loads. Double click to zoom. Click on characters when you find them, and the character selector will appear for you to indicate who or what you found. Find them all as quickly as you can, and be added to the top scores for each puzzle.</p>
+  </div>
+
+  <div id='puzzle_marquee'>
+    <% @puzzles.each do |puzzle| %>
+      <h2><%= puzzle.name %></h2><br>
+      <%= link_to (image_tag puzzle.thumb, width: 300 ), puzzle %><br>
+    <%end%>
+  </div>
+</div>

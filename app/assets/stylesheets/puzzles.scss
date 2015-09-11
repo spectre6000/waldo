@@ -1,56 +1,90 @@
-// Main puzzle image
+//Root page
+  //Background
+    #main_container{
+      background-image: url(image_path('background.jpg'));
+      background-size: 100% 100%;
+      margin: -20px;
+    }
+  //Header
+    #root_header{
+      width: 80%;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #FFF;
+      h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: bold;
+        width: 45%;
+        margin: 20px auto;
+        color: #E22;
+      }
+      p {
+        width: 100%;
+        text-align: center;
+        font-family: sans-serif;
+        color: #E22;
+      }
+    }
+  //Puzzle marquee
+    #puzzle_marquee {
+      width: 80%;
+      margin: 0 auto 50px auto;
+    }
 
-.waldoImage {
-  margin: 0;
-  padding: 0;
-  &.fitted {
-    width: auto; 
-    height: auto; 
-    max-height: 100%;
-    max-width: 100%;
-  }
-}
+//Show page
+  // Main puzzle image
+    .waldoImage {
+      margin: 0;
+      padding: 0;
+      &.fitted {
+        width: auto; 
+        height: auto; 
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
 
-//Sidebar
-.sidebar {
-  position: fixed;
-  top: 100px;
-  left: -120px;
-  padding: 5px 10px 5px 0;
-  background-color: #E33;
-  border-radius: 0 5px 5px 0;
-  button {
-    height: 30px;
-    width: 110px;
-    float: left;
-    display: inline-block;
-    border-radius: 0 5px 5px 0;
-    border-color: #fff;
-    padding: 0;
-    background-color: #fff;
-    margin: 5px 0;
-    p {
-      display: inline-block;
-      float: left;
-      margin: 5px;
-    }
-    .face_button {
-      height: auto;
-      height: 25px;
-      float: right;
-      max-width: 30px;
-      margin: 1px 3px;
-    }
-    &:hover {
-      cursor: pointer;
-    }
-    &.found {
-      background-color: #0C0;
-      border-color: #0C0;
-    }
-    &.wrong {
+  //Sidebar
+    .sidebar {
+      position: fixed;
+      top: 100px;
+      left: -120px;
+      padding: 5px 10px 5px 0;
       background-color: #E33;
-      border-color: #E33;
+      border-radius: 0 5px 5px 0;
+      button {
+        height: 30px;
+        width: 110px;
+        float: left;
+        display: inline-block;
+        border-radius: 0 5px 5px 0;
+        border-color: #fff;
+        padding: 0;
+        background-color: #fff;
+        margin: 5px 0;
+        p {
+          display: inline-block;
+          float: left;
+          margin: 5px;
+        }
+        .face_button {
+          height: auto;
+          height: 25px;
+          float: right;
+          max-width: 30px;
+          margin: 1px 3px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &.found {
+          background-color: #0C0;
+          border-color: #0C0;
+        }
+        &.wrong {
+          background-color: #E33;
+          border-color: #E33;
+        }
+      }
     }
-  }
-}

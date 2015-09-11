@@ -24,4 +24,8 @@ class PuzzlesController < ApplicationController
     end
   end
 
+  def record_score
+    # @puzzle = Puzzle.find_by(cssid: params[:id])
+  end
+
 end
