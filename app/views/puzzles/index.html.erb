@@ -9,6 +9,14 @@
     <% @puzzles.each do |puzzle| %>
       <h2><%= puzzle.name %></h2><br>
       <%= link_to (image_tag puzzle.thumb, width: 300 ), puzzle %><br>
+      <div class='scores'>
+        <% count = 0 %>
+        <% @users.each do |user| %>
+          <% count +=1 %>
+          <% break if count > 5 %> 
+          <%= render partial: 'user' , locals: {user: user, puzzles_id: puzzle.id} %>
+        <% end %>
+      </div>
     <%end%>
   </div>
 </div>

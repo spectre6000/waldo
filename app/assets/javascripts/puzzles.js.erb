@@ -192,18 +192,22 @@ var wheresWaldo = (function() {
 
     //Record score
     var recordScore = function(name, time) {
-      $.ajax({
-        url: '/user_score',
-        type: "POST",
-        data: {id: $('.waldoImage').attr('id'), name: name, time: time},
-        dataType: "json",
-        success: function(result) {
-          window.location.href = '<%= Rails.application.routes.url_helpers.root_path %>';
-        },
-        error: function(result) {
-          console.log("Something went awry...");
-        }
-      });
+      if (name === null) {
+        window.location.href = '<%= Rails.application.routes.url_helpers.root_path %>';
+      } else {
+        $.ajax({
+          url: '/user_score',
+          type: "POST",
+          data: {id: $('.waldoImage').attr('id'), name: name, time: time},
+          dataType: "json",
+          success: function(result) {
+            window.location.href = '<%= Rails.application.routes.url_helpers.root_path %>';
+          },
+          error: function(result) {
+            console.log("Something went awry...");
+          }
+        });
+      }
     }
 
   //Revealing Module design pattern reveal
