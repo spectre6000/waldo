@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150911144840) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "characters", force: :cascade do |t|
     t.string   "name"
     t.float    "x_coordinate"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150911144840) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "characters", ["puzzles_id"], name: "index_characters_on_puzzles_id"
+  add_index "characters", ["puzzles_id"], name: "index_characters_on_puzzles_id", using: :btree
 
   create_table "puzzles", force: :cascade do |t|
     t.string   "name"
@@ -45,6 +48,6 @@ ActiveRecord::Schema.define(version: 20150911144840) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "users", ["puzzles_id"], name: "index_users_on_puzzles_id"
+  add_index "users", ["puzzles_id"], name: "index_users_on_puzzles_id", using: :btree
 
 end
